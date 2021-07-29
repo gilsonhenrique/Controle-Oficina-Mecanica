@@ -1,5 +1,5 @@
 
-<footer class="bg-dark p-5 text-light">
+<footer class="bg-dark fixed-bottom p-4 text-light">
 	<div class="container">
 		<small>
 			<?=APP_NOME?> Versão: <?=APP_VERSAO?>
