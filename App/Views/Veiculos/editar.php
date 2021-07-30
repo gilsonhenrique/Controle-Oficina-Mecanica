@@ -163,9 +163,8 @@
 				</div>
 
 				<div class="btn-toolbar p-4">
-						<div class="col-md-2">
-						<a href="<?= URL.'/Veiculos/deletar/'.$dados['id']?>" class="btn btn-danger btn-lg float-rigth">Excluir</a>
-						</div>
+						<div class="col-md-2">						
+						<a class="btn btn-danger btn-lg" href="<?= URL.'/Veiculos/deletar/'.$dados['id']?>" onclick="return confirm('Tem certeza que deseja excluir este ítem?')">Excluir</a>
 				</div>
 			</div>
 
