@@ -190,3 +190,7 @@
 	</form>
 
 </div>
+<!-- Esta div ajusta o final da pagina acima do Rodapé -->
+</div>
+<div class="card p-5">
+</div>
