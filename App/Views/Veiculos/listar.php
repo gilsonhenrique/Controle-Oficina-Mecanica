@@ -5,6 +5,7 @@
       <th scope="col">Prisma</th>     
       <th scope="col">Placa</th>
       <th scope="col">Nome</th>
+      <th scope="col">Celular</th>      
       <th scope="col">Veiculo</th>
       <th scope="col">Irregularidade</th>
       <th scope="col">status</th>      
@@ -18,6 +19,7 @@
       <td><?= $relatorio->prisma?></td>
       <td><?= $relatorio->placa?></td>
       <td><?= $relatorio->nome?></td>
+      <td><?= $relatorio->celular?></td>      
       <td><?= $relatorio->veiculo?></td>
       <td><?= $relatorio->irregularidade?></td>
       <td><?= $relatorio->status?></td>      
