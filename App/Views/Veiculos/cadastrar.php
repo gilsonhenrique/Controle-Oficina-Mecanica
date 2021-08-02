@@ -48,9 +48,15 @@
 
 			<div class="col">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
-				<input type="text" name="combustivel" id="combustivel" value="" class="form-control is-valid">
+				<select name="combustivel" id="combustivel" value="" class="form-control is-valid">
+				<option value="">--Selecione o combustível--</option>
+				<option value="Álcool">Álcool</option>
+				<option value="Gasolina">Gasolina</option>
+				<option value="Flex">Flex</option>
+				<option value="GNV-Álcool">GNV-Álcool</option>
+				<option value="GNV-Gasolina">GNV-Gasolina</option>
+				</select>
 			</div>
-
 
 
 			<div class="col">
@@ -93,7 +99,6 @@
 			
 			<div class="col-sm-6">
 				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
-				
 				<select name="mecrespd" id="mecrespd" value="" class="form-control is-valid">
 				<option value="">--Selecione o Nome--</option>
 				<option value="Matheus">Matheus</option>
@@ -102,7 +107,6 @@
 				<option value="Jean">Jean</option>
 				<option value="Outro">Outro (ver obs.)</option>
 				</select>
-
 			</div>
 
 
@@ -121,8 +125,13 @@
 
 			
 			<div class="col-sm-6">
-				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
-				<input type="text" name="mecresps" id="mecresps" value="" class="form-control is-valid">
+				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
+				<select name="mecresps" id="mecresps" value="" class="form-control is-valid">
+				<option value="">--Selecione o Nome--</option>
+				<option value="Isaías Martins">Isaías Martins</option>
+				<option value="Luiz Eduardo">Luiz Eduardo</option>
+				<option value="Outro">Outro (ver obs.)</option>
+				</select>
 			</div>
 
 		</div>

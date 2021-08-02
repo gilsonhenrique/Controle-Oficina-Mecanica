@@ -53,9 +53,15 @@
 
 			<div class="col">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
-				<input type="text" name="combustivel" id="combustivel" value="" class="form-control is-valid">
+				<select name="combustivel" id="combustivel" value="" class="form-control is-valid">
+				<option value="">--Selecione o combustível--</option>
+				<option value="Álcool" <?php if($dados['combustivel'] == 'ÁLCOOL'){ echo 'selected';}?>>Álcool</option>
+				<option value="Gasolina"<?php if($dados['combustivel'] == 'GASOLINA'){ echo 'selected';}?>>Gasolina</option>
+				<option value="Flex"<?php if($dados['combustivel'] == 'FLEX'){ echo 'selected';}?>>Flex</option>
+				<option value="GNV-Álcool"<?php if($dados['combustivel'] == 'GNV-ÁLCOOL'){ echo 'selected';}?>>GNV-Álcool</option>
+				<option value="GNV-Gasolina"<?php if($dados['combustivel'] == 'GNV-GASOLINA'){ echo 'selected';}?>>GNV-Gasolina</option>
+				</select>
 			</div>
-
 
 
 			<div class="col">
@@ -123,10 +129,14 @@
 					<textarea  name="obs" id="obs" class="form-control is-valid"><?=$dados['obs']?></textarea>
 			</div>
 
-			
 			<div class="col-sm-6">
-				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
-				<input type="text" name="mecresps" id="mecresps" value="<?=$dados['mecresps']?>" class="form-control is-valid">
+				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
+				<select name="mecresps" id="mecresps" value="" class="form-control is-valid">
+				<option value="">--Selecione o Nome--</option>
+				<option value="Isaías Martins" <?php if($dados['mecresps'] == 'ISAíAS MARTINS'){ echo 'selected';}?>>Isaías Martins</option>
+				<option value="Luiz Eduardo" <?php if($dados['mecresps'] == 'LUIZ EDUARDO'){ echo 'selected';}?>>Luiz Eduardo</option>
+				<option value="Outro"<?php if($dados['mecresps'] == 'OUTRO'){ echo 'selected';}?>>Outro (ver obs.)</option>
+				</select>
 			</div>
 
 			<div class="p-3 col-sm-6">

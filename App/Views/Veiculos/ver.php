@@ -36,7 +36,7 @@
 
 			<div class="col">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
-				<input type="number" min="0" max="6" name="prisma" id="prisma" value="<?= $dados['veiculos']->prisma?>" class="form-control is-valid">
+				<input type="text" name="prisma" id="prisma" value="<?= $dados['veiculos']->prisma?>" class="form-control is-valid">
 			</div>	
 
 		</div>
@@ -51,14 +51,14 @@
 
 			<div class="col">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
-				<input type="text" name="combustivel" id="combustivel" value="" class="form-control is-valid">
+				<input type="text" name="combustivel" id="combustivel" value="<?= $dados['veiculos']->combustivel?>" class="form-control is-valid">
 			</div>
 
 
 
 			<div class="col">
 				<label for="nome">Ano: <sup class= "text-danger"></sup></label>
-				<input type="number" min="2010" max="2030"name="ano" id="ano" value="<?= $dados['veiculos']->ano?>" class="form-control is-valid">
+				<input type="text" name="ano" id="ano" value="<?= $dados['veiculos']->ano?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
@@ -119,7 +119,7 @@
 
 			
 			<div class="col-sm-6">
-				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
+				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
 				<input type="text" name="mecresps" id="mecresps" value="<?= $dados['veiculos']->mecresps?>" class="form-control is-valid">
 			</div>
 
