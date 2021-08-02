@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="col-sm-8">
-				<label for="nome">Nome: <sup class= "text-danger">* Obrigatório *</sup></label>
+				<label for="nome">Nome: <sup class= "text-danger"></sup></label>
 				<input type="text" name="nome" id="nome" value="<?=$dados['nome']?>" class="form-control is-valid">
 			</div>
 
@@ -27,7 +27,7 @@
 
 		<div class= "row">
 			<div class="col">
-				<label for="nome">Placa: <sup class= "text-danger">* Obrigatório *</sup></label>
+				<label for="nome">Placa: <sup class= "text-danger"></sup></label>
 				<input type="text" name="placa" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
 			</div>
 

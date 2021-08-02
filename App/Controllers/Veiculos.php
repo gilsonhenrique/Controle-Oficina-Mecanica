@@ -38,17 +38,9 @@ class Veiculos extends Controller {
 				// ......Validações de Campos Vazios....................
 
 
-					if(empty($formulario['nome']) or empty($formulario['placa'])):
+					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular']) or empty($formulario['veiculo'])):
 						$message = '<div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div>';
 						echo $message;
-
-
-					//verificação de placa já cadastrada
-/*					elseif($this->usuarioModel->checarEmail($formulario['email'])):
-						$dados['email_erro'] = "E-mail já cadastrado, utilize outro!";
-*/
-
-
 					
 					elseif($this->usuarioModel->cadastrar($dados)):
 

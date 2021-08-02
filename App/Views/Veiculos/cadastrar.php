@@ -14,8 +14,8 @@
 			</div>
 
 			<div class="col">
-				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
-				<input type="text" name="celular"  placeholder="Ex.: 21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
+				<label for="nome">Celular: <sup class= "text-danger">* Obrigatório *</sup></label>
+				<input type="text" name="celular" placeholder="Ex.: 21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
 			</div>
 
 		</div>
@@ -23,11 +23,11 @@
 		<div class= "row">
 			<div class="col">
 				<label for="nome">Placa: <sup class= "text-danger">* Obrigatório *</sup></label>
-				<input type="text" name="placa" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
+				<input type="text" name="placa" placeholder="Ex.: AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
-				<label for="nome">Veículo: <sup class= "text-danger"></sup></label>
+				<label for="nome">Veículo: <sup class= "text-danger">* Obrigatório *</sup></label>
 				<input type="text" name="veiculo" id="veiculo" value="<?=$dados['veiculo']?>" class="form-control is-valid">
 			</div>
 
