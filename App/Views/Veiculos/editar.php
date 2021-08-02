@@ -38,7 +38,7 @@
 
 			<div class="col">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
-				<input type="number" min="0" max="6" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
+				<input type="number" min="0" max="20" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
 			</div>	
 
 		</div>
@@ -60,7 +60,7 @@
 
 			<div class="col">
 				<label for="nome">Ano: <sup class= "text-danger"></sup></label>
-				<input type="number" min="2010" max="2030"name="ano" id="ano" value="<?=$dados['ano']?>" class="form-control is-valid">
+				<input type="number" min="1970" max="2030"name="ano" id="ano" value="<?=$dados['ano']?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
@@ -95,18 +95,21 @@
 					<label for="nome">Pecas Necessárias: <sup class= "text-danger"></sup></label>
 					<textarea  name="pecnec" id="pecnec" class="form-control is-valid"><?=$dados['pecnec']?></textarea>
 			</div>
-
 			
 			<div class="col-sm-6">
 				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
-				<input type="text" name="mecrespd" id="mecrespd" value="<?=$dados['mecrespd']?>" class="form-control is-valid">
+				<select name="mecrespd" id="mecrespd" value="" class="form-control is-valid">
+				<option value="">--Selecione o Nome--</option>
+				<option value="Matheus" <?php if($dados['mecrespd'] == 'MATHEUS'){ echo 'selected';}?>>Matheus</option>
+				<option value="Eduardo"<?php if($dados['mecrespd'] == 'EDUARDO'){ echo 'selected';}?>>Eduardo</option>
+				<option value="Robson"<?php if($dados['mecrespd'] == 'ROBSON'){ echo 'selected';}?>>Robson</option>
+				<option value="Jean"<?php if($dados['mecrespd'] == 'JEAN'){ echo 'selected';}?>>Jean</option>
+				<option value="Outro"<?php if($dados['mecrespd'] == 'OUTRO'){ echo 'selected';}?>>Outro (ver obs.)</option>
+				</select>
 			</div>
 
 
 		</div>
-
-
-
 
 
 		<div class= "row">
