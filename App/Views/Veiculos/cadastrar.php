@@ -8,33 +8,43 @@
 				<h2>Cadastro Inicial do Veículo</h2>
 			</div>
 
-			<div class="col-sm-8">
-				<label for="nome">Nome: <sup class= "text-danger">* Obrigatório *</sup></label>
+			<div class="col-sm-6">
+				<label for="nome">Nome: <sup class= "text-danger">*</sup></label>
 				<input type="text" name="nome" id="nome" value="<?=$dados['nome']?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
-				<label for="nome">Celular: <sup class= "text-danger">* Obrigatório *</sup></label>
-				<input type="text" name="celular" placeholder="Ex.: 21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
-			</div>
-
-		</div>
-<!--.--------------------------------------------------------------.-->
-		<div class= "row">
-			<div class="col">
-				<label for="nome">Placa: <sup class= "text-danger">* Obrigatório *</sup></label>
-				<input type="text" name="placa" placeholder="Ex.: AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
-			</div>
-
-			<div class="col">
-				<label for="nome">Veículo: <sup class= "text-danger">* Obrigatório *</sup></label>
-				<input type="text" name="veiculo" id="veiculo" value="<?=$dados['veiculo']?>" class="form-control is-valid">
+				<label for="nome">Celular: <sup class= "text-danger">*</sup></label>
+				<input type="text" name="celular" placeholder="21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
 				<input type="number" min="0" max="20" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
 			</div>	
+
+		</div>
+<!--.--------------------------------------------------------------.-->
+		<div class= "row">
+			<div class="col">
+				<label for="nome">Placa: <sup class= "text-danger">*</sup></label>
+				<input type="text" name="placa" placeholder="AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
+			</div>
+
+			<div class="col">
+				<label for="nome">Ano/Fabricação: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1970" max="2040" name="fabricacao" id="fabricacao" value="<?=$dados['fabricacao']?>" class="form-control is-valid">
+			</div>
+			
+			<div class="col">
+				<label for="nome">Ano/Modelo: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1970" max="2040" name="modelo" id="modelo" value="<?=$dados['modelo']?>" class="form-control is-valid">
+			</div>
+
+			<div class="col">
+				<label for="nome">Cilindrada: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1000" max="9999" step="100" name="cilindrada" id="cilindrada" value="<?=$dados['cilindrada']?>" class="form-control is-valid">
+			</div>
 
 		</div>
 <!--.--------------------------------------------------------------.-->
@@ -46,10 +56,10 @@
 			</div>
 
 
-			<div class="col">
+			<div class="col-sm-4">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
 				<select name="combustivel" id="combustivel" value="" class="form-control is-valid">
-				<option value="">--Selecione o combustível--</option>
+				<option value="">--Selecione--</option>
 				<option value="Álcool">Álcool</option>
 				<option value="Gasolina">Gasolina</option>
 				<option value="Flex">Flex</option>
@@ -60,8 +70,8 @@
 
 
 			<div class="col">
-				<label for="nome">Ano: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1970" max="2030"name="ano" id="ano" value="<?=$dados['ano']?>" class="form-control is-valid">
+				<label for="nome">Veículo <sup class= "text-danger"></sup></label>
+				<input type="text" name="veiculo" id="veiculo" value="<?=$dados['veiculo']?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
@@ -105,6 +115,8 @@
 				<option value="Eduardo">Eduardo</option>
 				<option value="Robson">Robson</option>
 				<option value="Jean">Jean</option>
+				<option value="Isaías Martins">Isaías Martins</option>
+				<option value="Luiz Eduardo">Luiz Eduardo</option>
 				<option value="Outro">Outro (ver obs.)</option>
 				</select>
 			</div>
@@ -128,6 +140,10 @@
 				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
 				<select name="mecresps" id="mecresps" value="" class="form-control is-valid">
 				<option value="">--Selecione o Nome--</option>
+				<option value="Matheus">Matheus</option>
+				<option value="Eduardo">Eduardo</option>
+				<option value="Robson">Robson</option>
+				<option value="Jean">Jean</option>
 				<option value="Isaías Martins">Isaías Martins</option>
 				<option value="Luiz Eduardo">Luiz Eduardo</option>
 				<option value="Outro">Outro (ver obs.)</option>

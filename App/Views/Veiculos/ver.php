@@ -5,13 +5,12 @@
 		<h1 class="text-primary text-center">Relatório do Veículo</h1>
 		</div>
 
-
 		<div class= "row">
 			<div class="p-3 col-sm-8">
 				<h2>Cadastro Inicial do Veículo</h2>
 			</div>
 
-			<div class="col-sm-8">
+			<div class="col-sm-6">
 				<label for="nome">Nome: <sup class= "text-danger"></sup></label>
 				<input type="text" name="nome" id="nome" value="<?=$dados['veiculos']->nome?>" class="form-control is-valid">
 			</div>
@@ -20,27 +19,38 @@
 				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
 				<input type="text" name="celular"  placeholder="Ex.: 21912341234" id="celular" value="<?=$dados['veiculos']->celular?>" class="form-control is-valid">
 			</div>
-
-		</div>
-
-		<div class= "row">
-			<div class="col">
-				<label for="nome">Placa: <sup class= "text-danger"></sup></label>
-				<input type="text" name="placa" id="placa" value="<?=$dados['veiculos']->placa?>" class="form-control is-valid">
-			</div>
-
-			<div class="col">
-				<label for="nome">Veículo: <sup class= "text-danger"></sup></label>
-				<input type="text" name="veiculo" id="veiculo" value="<?= $dados['veiculos']->veiculo?>" class="form-control is-valid">
-			</div>
-
+			
 			<div class="col">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
 				<input type="text" name="prisma" id="prisma" value="<?= $dados['veiculos']->prisma?>" class="form-control is-valid">
 			</div>	
 
 		</div>
+<!--.--------------------------------------------------------------.-->
+		<div class= "row">
 
+			<div class="col">
+				<label for="nome">Placa: <sup class= "text-danger"></sup></label>
+				<input type="text" name="placa" id="placa" value="<?=$dados['veiculos']->placa?>" class="form-control is-valid">
+			</div>
+
+			<div class="col">
+				<label for="nome">Ano/Fabricação: <sup class= "text-danger"></sup></label>
+				<input type="number" name="fabricacao" id="fabricacao" value="<?= $dados['veiculos']->fabricacao?>" class="form-control is-valid">
+			</div>
+
+			<div class="col">
+				<label for="nome">Ano/Modelo: <sup class= "text-danger"></sup></label>
+				<input type="number" name="modelo" id="modelo" value="<?= $dados['veiculos']->modelo?>" class="form-control is-valid">
+			</div>
+
+			<div class="col">
+				<label for="nome">Cilindrada: <sup class= "text-danger"></sup></label>
+				<input type="number" name="cilindrada" id="cilindrada" value="<?= $dados['veiculos']->cilindrada?>" class="form-control is-valid">
+			</div>
+
+		</div>
+<!--.--------------------------------------------------------------.-->
 		<div class= "row">
 
 			<div class="col">
@@ -57,8 +67,8 @@
 
 
 			<div class="col">
-				<label for="nome">Ano: <sup class= "text-danger"></sup></label>
-				<input type="text" name="ano" id="ano" value="<?= $dados['veiculos']->ano?>" class="form-control is-valid">
+				<label for="nome">Veículo <sup class= "text-danger"></sup></label>
+				<input type="text" name="veiculo" id="veiculo" value="<?= $dados['veiculos']->veiculo?>" class="form-control is-valid">
 			</div>
 
 			<div class="col">
@@ -67,7 +77,7 @@
 			</div>
 
 		</div>
-
+<!--.--------------------------------------------------------------.-->
 		<div class= "row">
 
 			<div class="col">

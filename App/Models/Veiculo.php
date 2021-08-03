@@ -14,15 +14,17 @@ class Veiculo {
 // Função cadastrar no BD
 	public function cadastrar($dados){
 
-		$this->db->query("INSERT INTO veiculos(prisma, nome, celular, placa, veiculo, ano, km, combustivel, cor, irregularidade, diagnostico, pecnec, mecrespd, obs, mecresps, status) VALUES (:prisma, :nome, :celular, :placa, :veiculo, :ano, :km, :combustivel, :cor, :irregularidade, :diagnostico, :pecnec, :mecrespd, :obs, :mecresps, :status)");
+		$this->db->query("INSERT INTO veiculos(prisma, nome, celular, placa, fabricacao, modelo, cilindrada, km, combustivel, veiculo, cor, irregularidade, diagnostico, pecnec, mecrespd, obs, mecresps, status) VALUES (:prisma, :nome, :celular, :placa, :fabricacao, :modelo, :cilindrada, :km, :combustivel, :veiculo, :cor, :irregularidade, :diagnostico, :pecnec, :mecrespd, :obs, :mecresps, :status)");
 		$this->db->bind("prisma", $dados['prisma']);
 		$this->db->bind("nome", $dados['nome']);
 		$this->db->bind("celular", $dados['celular']);
 		$this->db->bind("placa", $dados['placa']);
-		$this->db->bind("veiculo", $dados['veiculo']);
-		$this->db->bind("ano", $dados['ano']);
+		$this->db->bind("fabricacao", $dados['fabricacao']);
+		$this->db->bind("modelo", $dados['modelo']);
+		$this->db->bind("cilindrada", $dados['cilindrada']);					
 		$this->db->bind("km", $dados['km']);
-		$this->db->bind("combustivel", $dados['combustivel']);		
+		$this->db->bind("combustivel", $dados['combustivel']);
+		$this->db->bind("veiculo", $dados['veiculo']);
 		$this->db->bind("cor", $dados['cor']);
 		$this->db->bind("irregularidade", $dados['irregularidade']);
 		$this->db->bind("diagnostico", $dados['diagnostico']);		
@@ -46,16 +48,18 @@ class Veiculo {
 // Função para atualizar o Veiculo no BD
 	public function atualizar($dados){
 
-		$this->db->query("UPDATE veiculos SET prisma = :prisma, nome= :nome, celular = :celular, placa = :placa, veiculo = :veiculo, ano = :ano, km = :km, combustivel = :combustivel, cor = :cor, irregularidade = :irregularidade, diagnostico = :diagnostico, pecnec = :pecnec, mecrespd = :mecrespd, obs = :obs, mecresps = :mecresps, status = :status  WHERE id = :id");
+		$this->db->query("UPDATE veiculos SET prisma = :prisma, nome= :nome, celular = :celular, placa = :placa, fabricacao = :fabricacao, modelo = :modelo, cilindrada = :cilindrada, km = :km, combustivel = :combustivel, veiculo = :veiculo, cor = :cor, irregularidade = :irregularidade, diagnostico = :diagnostico, pecnec = :pecnec, mecrespd = :mecrespd, obs = :obs, mecresps = :mecresps, status = :status  WHERE id = :id");
 		$this->db->bind('id', $dados['id']);
 		$this->db->bind("prisma", $dados['prisma']);
 		$this->db->bind("nome", $dados['nome']);
 		$this->db->bind("celular", $dados['celular']);
 		$this->db->bind("placa", $dados['placa']);
-		$this->db->bind("veiculo", $dados['veiculo']);
-		$this->db->bind("ano", $dados['ano']);
+		$this->db->bind("fabricacao", $dados['fabricacao']);
+		$this->db->bind("modelo", $dados['modelo']);
+		$this->db->bind("cilindrada", $dados['cilindrada']);
 		$this->db->bind("km", $dados['km']);
-		$this->db->bind("combustivel", $dados['combustivel']);		
+		$this->db->bind("combustivel", $dados['combustivel']);
+		$this->db->bind("veiculo", $dados['veiculo']);
 		$this->db->bind("cor", $dados['cor']);
 		$this->db->bind("irregularidade", $dados['irregularidade']);
 		$this->db->bind("diagnostico", $dados['diagnostico']);		

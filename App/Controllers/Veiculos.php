@@ -18,12 +18,14 @@ class Veiculos extends Controller {
 			$dados = [
 				'nome' => strtoupper(trim($formulario['nome'])),
 				'celular' => trim($formulario['celular']),
-				'placa' => strtoupper(trim($formulario['placa'])),
-				'veiculo' => strtoupper(trim($formulario['veiculo'])),
 				'prisma' => trim(($formulario['prisma'])),
-				'ano' => trim($formulario['ano']),
+				'placa' => strtoupper(trim($formulario['placa'])),
+				'fabricacao' => strtoupper(trim($formulario['fabricacao'])),
+				'modelo' => strtoupper(trim($formulario['modelo'])),
+				'cilindrada' => strtoupper(trim($formulario['cilindrada'])),
 				'km' => trim($formulario['km']),
 				'combustivel' => strtoupper(trim($formulario['combustivel'])),
+				'veiculo' => strtoupper(trim($formulario['veiculo'])),
 				'cor' => strtoupper(trim($formulario['cor'])),
 				'irregularidade' => strtoupper(trim($formulario['irregularidade'])),
 				'diagnostico' => strtoupper(trim($formulario['diagnostico'])),
@@ -31,14 +33,14 @@ class Veiculos extends Controller {
 				'mecrespd' => strtoupper(trim($formulario['mecrespd'])),
 				'obs' => strtoupper(trim($formulario['obs'])),
 				'mecresps' => strtoupper(trim($formulario['mecresps'])),
-				'status' => strtoupper(trim($formulario['status'])),				
+				'status' => strtoupper(trim($formulario['status'])),			
 				];
 
 				if(in_array('', $formulario)):
 				// ......Validações de Campos Vazios....................
 
 
-					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular']) or empty($formulario['veiculo'])):
+					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular'])):
 						$message = '<div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div>';
 						echo $message;
 					
@@ -53,10 +55,12 @@ class Veiculos extends Controller {
 								'nome' => '',
 								'celular' => '',
 								'placa' => '',
-								'veiculo' => '',
-								'ano' => '',
+								'fabricacao' => '',
+								'modelo' => '',
+								'cilindrada' => '',
 								'km' => '',
-								'combustivel' => '',
+								'combustivel' => '',							
+								'veiculo' => '',
 								'cor' => '',
 								'irregularidade' => '',
 								'diagnostico' => '',
@@ -85,10 +89,12 @@ class Veiculos extends Controller {
 					'nome' => '',
 					'celular' => '',
 					'placa' => '',
-					'veiculo' => '',
-					'ano' => '',
+					'fabricacao' => '',
+					'modelo' => '',
+					'cilindrada' => '',
 					'km' => '',
-					'combustivel' => '',					
+					'combustivel' => '',							
+					'veiculo' => '',
 					'cor' => '',
 					'irregularidade' => '',
 					'diagnostico' => '',
@@ -96,7 +102,7 @@ class Veiculos extends Controller {
 					'mecrespd' => '',
 					'obs' => '',								
 					'mecresps' => '',
-					'status' => '',							
+					'status' => '',								
 					];
 
 
@@ -130,10 +136,12 @@ class Veiculos extends Controller {
 				'nome' => strtoupper(trim($formulario['nome'])),
 				'celular' => trim($formulario['celular']),
 				'placa' => strtoupper(trim($formulario['placa'])),
-				'veiculo' => strtoupper(trim($formulario['veiculo'])),
-				'ano' => trim($formulario['ano']),
+				'fabricacao' => trim($formulario['fabricacao']),
+				'modelo' => trim($formulario['modelo']),
+				'cilindrada' => trim($formulario['cilindrada']),
 				'km' => trim($formulario['km']),
-				'combustivel' => strtoupper(trim($formulario['combustivel'])),				
+				'combustivel' => strtoupper(trim($formulario['combustivel'])),
+				'veiculo' => strtoupper(trim($formulario['veiculo'])),		
 				'cor' => strtoupper(trim($formulario['cor'])),
 				'irregularidade' => strtoupper(trim($formulario['irregularidade'])),
 				'diagnostico' => strtoupper(trim($formulario['diagnostico'])),
@@ -161,27 +169,26 @@ class Veiculos extends Controller {
 
 					// dados em branco para o formulario aparecer "limpo"						
 						$dados = [
-							'id' => '',
-							'prisma' => '',
-							'nome' => '',
-							'celular' => '',
-							'placa' => '',
-							'veiculo' => '',
-							'ano' => '',
-							'km' => '',
-							'combustivel' => '',
-							'cor' => '',
-							'irregularidade' => '',
-							'diagnostico' => '',
-							'pecnec' => '',
-							'mecrespd' => '',
-							'obs' => '',								
-							'mecresps' => '',
-							'status' => '',									
-						];
-
-
-								
+								'id' => '',
+								'prisma' => '',
+								'nome' => '',
+								'celular' => '',
+								'placa' => '',
+								'fabricacao' => '',
+								'modelo' => '',
+								'cilindrada' => '',
+								'km' => '',
+								'combustivel' => '',							
+								'veiculo' => '',
+								'cor' => '',
+								'irregularidade' => '',
+								'diagnostico' => '',
+								'pecnec' => '',
+								'mecrespd' => '',
+								'obs' => '',								
+								'mecresps' => '',
+								'status' => '',								
+								];
 
 
 					else:
@@ -203,10 +210,12 @@ class Veiculos extends Controller {
 				'nome' => $veiculo->nome,
 				'celular' => $veiculo->celular,
 				'placa' => $veiculo->placa,
-				'veiculo' => $veiculo->veiculo,
-				'ano' => $veiculo->ano,
-				'combustivel' => $veiculo->combustivel,					
+				'fabricacao' => $veiculo->fabricacao,
+				'modelo' => $veiculo->modelo,
+				'cilindrada' => $veiculo->cilindrada,
 				'km' => $veiculo->km,
+				'combustivel' => $veiculo->combustivel,
+				'veiculo' => $veiculo->veiculo,
 				'cor' => $veiculo->cor,
 				'irregularidade' => $veiculo->irregularidade,
 				'diagnostico' => $veiculo->diagnostico,
@@ -246,10 +255,12 @@ class Veiculos extends Controller {
 			'nome' => '',
 			'celular' => '',
 			'placa' => '',
-			'veiculo' => '',
-			'ano' => '',
+			'fabricacao' => '',
+			'modelo' => '',
+			'cilindrada' => '',
 			'km' => '',
-			'combustivel' => '',				
+			'combustivel' => '',
+			'veiculo' => '',				
 			'cor' => '',
 			'irregularidade' => '',
 			'diagnostico' => '',
