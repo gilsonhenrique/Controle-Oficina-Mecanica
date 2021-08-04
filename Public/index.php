@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 include './../App/config.php';
 include './../App/autoload.php';
 
@@ -27,11 +27,13 @@ $db = new Db_Connect();
     <body>
 
     	<?php
-        include '../App/Views/header.php';
+// Se estiver logado, carrega cabeçalho
+    if(Sessao::estaLogado()){include '../App/Views/header.php';}
 
     	$rotas = new Rota();
 
-        include '../App/Views/footer.php';
+// Se estiver logado, carrega rodapé
+    if(Sessao::estaLogado()){include '../App/Views/footer.php';}
     	?>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>

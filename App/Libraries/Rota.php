@@ -27,6 +27,13 @@ class Rota {
 
 		//requere o controlador
 		require_once '../App/Controllers/'.$this->controlador.'.php';
+
+		//Verifica login
+		if(!Sessao::estaLogado() && $this->controlador !== "Usuarios"):
+		URL::redirecionar('Usuarios/logar');
+		die;
+		endif;
+
 		//instancia do controlador
 		$this->controlador = new $this->controlador;
 

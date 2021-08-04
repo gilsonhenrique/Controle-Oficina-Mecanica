@@ -1,46 +1,20 @@
-<header class= "bg-dark p-3">
-  	<div class= "container">
-      <nav class="navbar navbar-expand-sm navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark p-4">
 
-        <a class="navbar-brand" href="<?=URL?>">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="container-fluid">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="navbar-brand text-white" href="<?=URL?>">BMI-Home</a>
 
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
+    <div class="row ml-auto">
 
-          </ul>
-
-
-
-        <div class="btn-toolbar p-4">
-            <div class="col-md-4">
-            <a class="btn btn-info mr-4 " href="<?=URL?>/Veiculos/cadastrar">
-              Cadastrar
-            </a>
-            </div>
-        </div>
-
-
-
-        <div class="btn-toolbar p-4">
-            <div class="col-md-4">
-            <a class="btn btn-info mr-4 " href="<?=URL?>/Veiculos/listar">
-              Listar Todos
-            </a>
-            </div>
-        </div>
-
-
-        </div>
-
-      </nav>
- 
+      <a class="col btn btn-info mr-3" href="<?=URL?>/Veiculos/cadastrar">Cadastrar Ítens</a>
+      <a class="col btn btn-info mr-3" href="<?=URL?>/Veiculos/listar">Listar Ítens</a>
+      <a class="col btn btn-danger" href="<?=URL?>/Usuarios/sair">Sair</a>
+    
     </div>
 
-</header>
+    </div>
+
+  </div>
+
+
+</nav>
