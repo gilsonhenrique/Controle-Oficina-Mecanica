@@ -58,13 +58,10 @@
 				<input type="text" name="km" id="km" value="<?= $dados['veiculos']->km?>" class="form-control is-valid">
 			</div>
 
-
 			<div class="col">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
 				<input type="text" name="combustivel" id="combustivel" value="<?= $dados['veiculos']->combustivel?>" class="form-control is-valid">
 			</div>
-
-
 
 			<div class="col">
 				<label for="nome">Veículo <sup class= "text-danger"></sup></label>
@@ -112,10 +109,6 @@
 
 		</div>
 
-
-
-
-
 		<div class= "row">
 
 			<div class="p-3 col-sm-12">
@@ -133,11 +126,7 @@
 				<input type="text" name="mecresps" id="mecresps" value="<?= $dados['veiculos']->mecresps?>" class="form-control is-valid">
 			</div>
 
-
 		</div>
 
 
-</div>
-<!-- Esta div ajusta o final da pagina acima do Rodapé -->
-<div class="card p-5 border-0">
 </div>

@@ -1,20 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark p-4">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <a class="navbar-brand text-white" href="<?=URL?>">BMI-Home</a>
+      <a class="navbar-brand text-white" href="<?=URL?>">BMI-Home</a>
 
-    <div class="row ml-auto">
+      <div class="row ml-auto">
 
-      <a class="col btn btn-info mr-3" href="<?=URL?>/Veiculos/cadastrar">Cadastrar Ítens</a>
-      <a class="col btn btn-info mr-3" href="<?=URL?>/Veiculos/listar">Listar Ítens</a>
-      <a class="col btn btn-danger" href="<?=URL?>/Usuarios/sair">Sair</a>
-    
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu veículos
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/cadastrar">Cadastrar Ítens</a></li>
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar">Listar Ítens</a></li>
+        </div>
+
+      </div>
+
     </div>
-
-    </div>
-
-  </div>
-
 
 </nav>

@@ -178,7 +178,8 @@
 
 
 		</div>
-<?php if($dados['placa']):?>
+			
+			<?php if($dados['placa']):?>
 
 			<div class= "row">
 				<div class="btn-toolbar p-4">
@@ -193,8 +194,7 @@
 				</div>
 			</div>
 
-
-<?php else:?>
+			<?php else:?>
 
 			<div class= "row">
 						<div class="col-md-2">
@@ -205,16 +205,10 @@
 						</div>
 			</div>
 
+			<?php endif ?>
 
-<?php endif ?>
 			</div>
-
-
 
 	</form>
 
-</div>
-<!-- Esta div ajusta o final da pagina acima do Rodapé -->
-</div>
-<div class="card p-5">
 </div>

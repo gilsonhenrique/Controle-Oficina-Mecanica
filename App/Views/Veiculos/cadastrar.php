@@ -121,7 +121,6 @@
 				</select>
 			</div>
 
-
 		</div>
 <!--.--------------------------------------------------------------.-->
 		<div class= "row">
@@ -151,9 +150,7 @@
 			</div>
 
 		</div>
-
 <!--.--------------------------------------------------------------.-->
-
 		<div class="p-3 col-sm-6">
 
 				<p>Selecione o status:</p>
@@ -176,17 +173,13 @@
 
 		</div>
 <!--.--------------------------------------------------------------.-->
-
 		<div class="btn-toolbar p-5">
 			<div class="col-md-4">
 				<input type="submit" value="Cadastrar" class="btn btn-info btn-lg">
 			</div>
 
-
 		</div>
 
 	</form>
 
-</div>
-<div class="card p-5">
 </div>
