@@ -1,64 +1,45 @@
-<!-- tamanho col.tela gde , tela média , centralizar, espaçãmento-->
-<div class="container p-3">
+<div class="container p-2">
 
 	<form name="editar" method="POST" action="<?=URL?>/Veiculos/editar/<?=$dados['id']?>" class="mt-4">
 
 		<div class="p-3 col-sm-8">
-		<h1 class="text-primary text-center">Editar Ítens</h1p>
+		<h1 class="text-primary text-center">Editar Veículo</h1p>
 		</div>
 <!--.--------------------------------------------------------------.-->
 		<div class= "row">
-			<div class="p-3 col-sm-8">
-				<h2>Cadastro Inicial do Veículo</h2>
+			<div class="col-12 col-sm-12 p-3">
+				<h2>Cadastro Inicial</h2>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-9">
 				<label for="nome">Nome: <sup class= "text-danger"></sup></label>
 				<input type="text" name="nome" id="nome" value="<?=$dados['nome']?>" class="form-control is-valid">
 			</div>
-
-			<div class="col">
-				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
-				<input type="text" name="celular" placeholder="21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
-			</div>
-			
-			<div class="col">
+			<div class="col-3">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
 				<input type="number" min="0" max="20" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
 			</div>	
-
-		</div>
-<!--.--------------------------------------------------------------.-->
-		<div class= "row">
-			<div class="col">
+			<div class="col-6 col-sm-3">
+				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
+				<input type="text" name="celular" placeholder="21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
+			</div>
+			<div class="col-6 col-sm-3">
 				<label for="nome">Placa: <sup class= "text-danger"></sup></label>
 				<input type="text" name="placa" placeholder="AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
 			</div>
-
-			<div class="col">
-				<label for="nome">Ano/Fabricação: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1970" max="2040" name="fabricacao" id="fabricacao" value="<?=$dados['fabricacao']?>" class="form-control is-valid">
+			<div class="col-6 col-sm-3">
+				<label for="nome">Veículo <sup class= "text-danger"></sup></label>
+				<input type="text" name="veiculo" id="veiculo" value="<?=$dados['veiculo']?>" class="form-control is-valid">
 			</div>
-
-			<div class="col">
-				<label for="nome">Ano/Modelo: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1970" max="2040" name="modelo" id="modelo" value="<?=$dados['modelo']?>" class="form-control is-valid">
+			<div class="col-6 col-sm-3">
+				<label for="nome">Cor: <sup class= "text-danger"></sup></label>
+				<input type="text" name="cor" id="cor" value="<?=$dados['cor']?>" class="form-control is-valid">
 			</div>
-			
-			<div class="col">
-				<label for="nome">Cilindrada: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1000" max="9999" name="cilindrada" id="cilindrada" value="<?=$dados['cilindrada']?>" class="form-control is-valid">
-			</div>
-		</div>
-<!--.--------------------------------------------------------------.-->
-		<div class= "row">
-
-			<div class="col">
+			<div class="col-6 col-sm-3">
 				<label for="nome">Km: <sup class= "text-danger"></sup></label>
 				<input type="text" name="km" id="km" value="<?=$dados['km']?>" class="form-control is-valid">
 			</div>
-
-			<div class="col">
+			<div class="col-6 col-sm-3">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
 				<select name="combustivel" id="combustivel" value="" class="form-control is-valid">
 				<option value="">--Selecione o combustível--</option>
@@ -69,46 +50,43 @@
 				<option value="GNV-Gasolina"<?php if($dados['combustivel'] == 'GNV-GASOLINA'){ echo 'selected';}?>>GNV-Gasolina</option>
 				</select>
 			</div>
-
-			<div class="col">
-				<label for="nome">Veículo <sup class= "text-danger"></sup></label>
-				<input type="text" name="veiculo" id="veiculo" value="<?=$dados['veiculo']?>" class="form-control is-valid">
+			<div class="col-4 col-sm-2">
+				<label for="nome">Ano/Fabricação: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1970" max="2040" name="fabricacao" id="fabricacao" value="<?=$dados['fabricacao']?>" class="form-control is-valid">
 			</div>
-
-			<div class="col">
-				<label for="nome">Cor: <sup class= "text-danger"></sup></label>
-				<input type="text" name="cor" id="cor" value="<?=$dados['cor']?>" class="form-control is-valid">
+			<div class="col-4 col-sm-2">
+				<label for="nome">Ano/Modelo: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1970" max="2040" name="modelo" id="modelo" value="<?=$dados['modelo']?>" class="form-control is-valid">
 			</div>
-
-		</div>
-<!--.--------------------------------------------------------------.-->
-		<div class= "row">
-
+			<div class="col-4 col-sm-2">
+				<label for="nome">Cilindrada: <sup class= "text-danger"></sup></label>
+				<input type="number" min="1000" max="9999" name="cilindrada" id="cilindrada" value="<?=$dados['cilindrada']?>" class="form-control is-valid">
+			</div>
 			<div class="col">
 				<label for="nome">Irregularidade: <sup class= "text-danger"></sup></label>
 				<textarea  name="irregularidade" id="irregularidade" class="form-control is-valid"><?=$dados['irregularidade']?></textarea>
 			</div>
+
 		</div>
-
-
+<!--.--------------------------------------------------------------.-->
 
 		<div class= "row">
 
-			<div class="p-3 col-sm-12">
+			<div class="col-12 col-sm-12 p-3">
 				<h2>Diagnóstico Técnico</h2>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-12 col-sm-12">
 					<label for="nome">Diagnóstico: <sup class= "text-danger"></sup></label>
 					<textarea  name="diagnostico" id="diagnostico" class="form-control is-valid"><?=$dados['diagnostico']?></textarea>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-12 col-sm-12">
 					<label for="nome">Pecas Necessárias: <sup class= "text-danger"></sup></label>
 					<textarea  name="pecnec" id="pecnec" class="form-control is-valid"><?=$dados['pecnec']?></textarea>
 			</div>
 			
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<label for="nome">Mecânico Responsável: <sup class= "text-danger"></sup></label>
 				<select name="mecrespd" id="mecrespd" value="" class="form-control is-valid">
 				<option value="">--Selecione o Nome--</option>
@@ -124,20 +102,20 @@
 
 
 		</div>
-
+<!--.--------------------------------------------------------------.-->
 
 		<div class= "row">
 
-			<div class="p-3 col-sm-12">
+			<div class="col-sm-12 p-3">
 				<h2>Execução do Serviço</h2>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-12 col-sm-12">
 					<label for="nome">Observações: <sup class= "text-danger"></sup></label>
 					<textarea  name="obs" id="obs" class="form-control is-valid"><?=$dados['obs']?></textarea>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
 				<select name="mecresps" id="mecresps" value="" class="form-control is-valid">
 				<option value="">--Selecione o Nome--</option>
@@ -151,7 +129,10 @@
 				</select>
 			</div>
 
-			<div class="p-3 col-sm-6">
+		</div>
+<!--.--------------------------------------------------------------.-->
+
+		<div class="p-3 col-sm-6">
 
 				<p>Selecione o status:</p>
 
@@ -172,10 +153,6 @@
 					<?php if($dados['status'] == 'LIBERADO'){ echo 'checked';}?>>
 					<label for="liberado">Liberado</label>
 				</div>
-
-			</div>
-
-
 
 		</div>
 			
@@ -207,7 +184,7 @@
 
 			<?php endif ?>
 
-			</div>
+		</div>
 
 	</form>
 
