@@ -17,7 +17,7 @@
 			</div>
 			<div class="col-3">
 				<label for="nome">Prisma: <sup class= "text-danger"></sup></label>
-				<input type="number" min="0" max="20" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
+				<input type="number" name="prisma" id="prisma" value="<?=$dados['prisma']?>" class="form-control is-valid">
 			</div>	
 			<div class="col-6 col-sm-3">
 				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="col-6 col-sm-3">
 				<label for="nome">Km: <sup class= "text-danger"></sup></label>
-				<input type="text" name="km" id="km" value="<?=$dados['km']?>" class="form-control is-valid">
+				<input type="number" name="km" id="km" value="<?=$dados['km']?>" class="form-control is-valid">
 			</div>
 			<div class="col-6 col-sm-3">
 				<label for="nome">Combustível: <sup class= "text-danger"></sup></label>
@@ -45,6 +45,8 @@
 				<option value="">--Selecione o combustível--</option>
 				<option value="Álcool" <?php if($dados['combustivel'] == 'ÁLCOOL'){ echo 'selected';}?>>Álcool</option>
 				<option value="Gasolina"<?php if($dados['combustivel'] == 'GASOLINA'){ echo 'selected';}?>>Gasolina</option>
+				<option value="Diesel"<?php if($dados['combustivel'] == 'DIESEL'){ echo 'selected';}?>>Diesel</option>
+				<option value="Elétrico"<?php if($dados['combustivel'] == 'ELÉTRICO'){ echo 'selected';}?>>Elétrico</option>				
 				<option value="Flex"<?php if($dados['combustivel'] == 'FLEX'){ echo 'selected';}?>>Flex</option>
 				<option value="GNV-Álcool"<?php if($dados['combustivel'] == 'GNV-ÁLCOOL'){ echo 'selected';}?>>GNV-Álcool</option>
 				<option value="GNV-Gasolina"<?php if($dados['combustivel'] == 'GNV-GASOLINA'){ echo 'selected';}?>>GNV-Gasolina</option>
@@ -52,15 +54,15 @@
 			</div>
 			<div class="col-4 col-sm-2">
 				<label for="nome">Ano/Fabricação: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1970" max="2040" name="fabricacao" id="fabricacao" value="<?=$dados['fabricacao']?>" class="form-control is-valid">
+				<input type="number" name="fabricacao" id="fabricacao" value="<?=$dados['fabricacao']?>" class="form-control is-valid">
 			</div>
 			<div class="col-4 col-sm-2">
 				<label for="nome">Ano/Modelo: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1970" max="2040" name="modelo" id="modelo" value="<?=$dados['modelo']?>" class="form-control is-valid">
+				<input type="number" name="modelo" id="modelo" value="<?=$dados['modelo']?>" class="form-control is-valid">
 			</div>
 			<div class="col-4 col-sm-2">
 				<label for="nome">Cilindrada: <sup class= "text-danger"></sup></label>
-				<input type="number" min="1000" max="9999" name="cilindrada" id="cilindrada" value="<?=$dados['cilindrada']?>" class="form-control is-valid">
+				<input type="number" name="cilindrada" id="cilindrada" value="<?=$dados['cilindrada']?>" class="form-control is-valid">
 			</div>
 			<div class="col">
 				<label for="nome">Irregularidade: <sup class= "text-danger"></sup></label>
