@@ -16,61 +16,38 @@ class Veiculos extends Controller {
 		if(isset($formulario)):
 
 			$dados = [
-				'nome' => strtoupper(trim($formulario['nome'])),
+				'nome' => mb_strtoupper(trim($formulario['nome'])),
 				'celular' => trim($formulario['celular']),
 				'prisma' => trim(($formulario['prisma'])),
-				'placa' => strtoupper(trim($formulario['placa'])),
-				'fabricacao' => strtoupper(trim($formulario['fabricacao'])),
-				'modelo' => strtoupper(trim($formulario['modelo'])),
-				'cilindrada' => strtoupper(trim($formulario['cilindrada'])),
+				'placa' => mb_strtoupper(trim($formulario['placa'])),
+				'fabricacao' => mb_strtoupper(trim($formulario['fabricacao'])),
+				'modelo' => mb_strtoupper(trim($formulario['modelo'])),
+				'cilindrada' => mb_strtoupper(trim($formulario['cilindrada'])),
 				'km' => trim($formulario['km']),
-				'combustivel' => strtoupper(trim($formulario['combustivel'])),
-				'veiculo' => strtoupper(trim($formulario['veiculo'])),
-				'cor' => strtoupper(trim($formulario['cor'])),
-				'irregularidade' => strtoupper(trim($formulario['irregularidade'])),
-				'diagnostico' => strtoupper(trim($formulario['diagnostico'])),
-				'pecnec' => strtoupper(trim($formulario['pecnec'])),
-				'mecrespd' => strtoupper(trim($formulario['mecrespd'])),
-				'obs' => strtoupper(trim($formulario['obs'])),
-				'mecresps' => strtoupper(trim($formulario['mecresps'])),
-				'status' => strtoupper(trim($formulario['status'])),			
+				'combustivel' => mb_strtoupper(trim($formulario['combustivel'])),
+				'veiculo' => mb_strtoupper(trim($formulario['veiculo'])),
+				'cor' => mb_strtoupper(trim($formulario['cor'])),
+				'irregularidade' => mb_strtoupper(trim($formulario['irregularidade'])),
+				'diagnostico' => mb_strtoupper(trim($formulario['diagnostico'])),
+				'pecnec' => mb_strtoupper(trim($formulario['pecnec'])),
+				'mecrespd' => mb_strtoupper(trim($formulario['mecrespd'])),
+				'obs' => mb_strtoupper(trim($formulario['obs'])),
+				'mecresps' => mb_strtoupper(trim($formulario['mecresps'])),
+				'status' => mb_strtoupper(trim($formulario['status'])),			
 				];
 
 				if(in_array('', $formulario)):
+
 				// ......Validações de Campos Vazios....................
-
-
 					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular'])):
-						$message = '<div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div>';
+						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div></div>';
 						echo $message;
 					
 					elseif($this->usuarioModel->cadastrar($dados)):
-
-						$message = '<div class="alert alert-success" role="alert">Cadastro realizado com sucesso!</div>';
+						$viewCadastrar= URL.'/Veiculos/cadastrar';
+						header("refresh:5; url={$viewCadastrar}");
+						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro realizado com sucesso!<br>Aguarde, carregando a tela de cadastro...</div></div>';
 						echo $message;
-
-					// dados em branco para o formulario aparecer "limpo"
-						$dados = [
-								'prisma' => '',
-								'nome' => '',
-								'celular' => '',
-								'placa' => '',
-								'fabricacao' => '',
-								'modelo' => '',
-								'cilindrada' => '',
-								'km' => '',
-								'combustivel' => '',							
-								'veiculo' => '',
-								'cor' => '',
-								'irregularidade' => '',
-								'diagnostico' => '',
-								'pecnec' => '',
-								'mecrespd' => '',
-								'obs' => '',								
-								'mecresps' => '',
-								'status' => '',								
-								];
-
 
 					else:
 						die("Erro no armazenar usuário no banco de dados");
@@ -83,7 +60,7 @@ class Veiculos extends Controller {
 				// 	
 		else:
 				
-
+// ............P/ carregar a view cadastrar inicial............ 
 			$dados = [
 					'prisma' => '',
 					'nome' => '',
@@ -105,11 +82,7 @@ class Veiculos extends Controller {
 					'status' => '',								
 					];
 
-
 		endif;
-
-
-
 
 //var_dump($formulario);/*   ### DEBUG   ###   */
 //var_dump($dados);/*   ### DEBUG   ###   */
@@ -122,8 +95,6 @@ class Veiculos extends Controller {
 ///////////////////////////////////////////////////////////////////
 
 //  metodo "editar"....................................................
-
-
 	public function editar($id){
 
 		$formulario = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -133,63 +104,39 @@ class Veiculos extends Controller {
 			$dados = [
 				'id'=> $id,
 				'prisma' => trim(($formulario['prisma'])),
-				'nome' => strtoupper(trim($formulario['nome'])),
+				'nome' => mb_strtoupper(trim($formulario['nome'])),
 				'celular' => trim($formulario['celular']),
-				'placa' => strtoupper(trim($formulario['placa'])),
+				'placa' => mb_strtoupper(trim($formulario['placa'])),
 				'fabricacao' => trim($formulario['fabricacao']),
 				'modelo' => trim($formulario['modelo']),
 				'cilindrada' => trim($formulario['cilindrada']),
 				'km' => trim($formulario['km']),
-				'combustivel' => strtoupper(trim($formulario['combustivel'])),
-				'veiculo' => strtoupper(trim($formulario['veiculo'])),		
-				'cor' => strtoupper(trim($formulario['cor'])),
-				'irregularidade' => strtoupper(trim($formulario['irregularidade'])),
-				'diagnostico' => strtoupper(trim($formulario['diagnostico'])),
-				'pecnec' => strtoupper(trim($formulario['pecnec'])),
-				'mecrespd' => strtoupper(trim($formulario['mecrespd'])),
-				'obs' => strtoupper(trim($formulario['obs'])),
-				'mecresps' => strtoupper(trim($formulario['mecresps'])),
-				'status' => strtoupper(trim($formulario['status'])),
+				'combustivel' => mb_strtoupper(trim($formulario['combustivel'])),
+				'veiculo' => mb_strtoupper(trim($formulario['veiculo'])),		
+				'cor' => mb_strtoupper(trim($formulario['cor'])),
+				'irregularidade' => mb_strtoupper(trim($formulario['irregularidade'])),
+				'diagnostico' => mb_strtoupper(trim($formulario['diagnostico'])),
+				'pecnec' => mb_strtoupper(trim($formulario['pecnec'])),
+				'mecrespd' => mb_strtoupper(trim($formulario['mecrespd'])),
+				'obs' => mb_strtoupper(trim($formulario['obs'])),
+				'mecresps' => mb_strtoupper(trim($formulario['mecresps'])),
+				'status' => mb_strtoupper(trim($formulario['status'])),
 				];
 
 
 				if(in_array('', $formulario)):
+
 				// ......Validações de Campos Vazios....................
-
-
 					if(empty($formulario['nome']) or empty($formulario['placa'])):
-						$message = '<div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div>';
+						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div></div>';
 						echo $message;
 //					                             metodo
 					elseif($this->usuarioModel->atualizar($dados)):
-
-						$message = '<div class="alert alert-success" role="alert">Cadastro atualizado com sucesso!</div>';
-						echo $message;
-
-
-					// dados em branco para o formulario aparecer "limpo"						
-						$dados = [
-								'id' => '',
-								'prisma' => '',
-								'nome' => '',
-								'celular' => '',
-								'placa' => '',
-								'fabricacao' => '',
-								'modelo' => '',
-								'cilindrada' => '',
-								'km' => '',
-								'combustivel' => '',							
-								'veiculo' => '',
-								'cor' => '',
-								'irregularidade' => '',
-								'diagnostico' => '',
-								'pecnec' => '',
-								'mecrespd' => '',
-								'obs' => '',								
-								'mecresps' => '',
-								'status' => '',								
-								];
-
+				//......Mensagem sucesso, redirecionando view cadastrar depois 5seg. ..........
+					$viewCadastrar= URL.'/Veiculos/cadastrar';
+					header("refresh:5; url={$viewCadastrar}");
+					$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro atualizado com sucesso!<br>Aguarde, retornando à tela de cadastro...</div></div>';
+					echo $message;
 
 					else:
 						die("Erro ao atualizar o cadastro no banco de dados");
@@ -228,7 +175,6 @@ class Veiculos extends Controller {
 
 		endif;
 
-
 //var_dump($relatorio);/*   ### DEBUG   ###   */
 //var_dump($dados);/*   ### DEBUG   ###   */
 
@@ -239,14 +185,12 @@ class Veiculos extends Controller {
 
 
 //  metodo 'deletar".....................................................
-
-
 	public function deletar($id){
 
 //	$dados = ['id'=> $id];
 		
 	if($this->usuarioModel->destruir($id)):
-		$message = '<div class="alert alert-success" role="alert">Ítem excluido com sucesso!</div>';
+		$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Ítem excluido com sucesso!</div></div>';
 		echo $message; 
 
 		$dados = [
@@ -279,11 +223,9 @@ class Veiculos extends Controller {
 
 		$this->view('Veiculos/editar', $dados);
 
-
 	}
 
 //  metodo 'listar".....................................................
-
 	public function listar(){
 
 		$dados = [
@@ -294,15 +236,11 @@ class Veiculos extends Controller {
 
 			$this->view('Veiculos/listar', $dados);
 
-
 	}
 
 
 //  metodo "ver".........................................................
-
-
 	public function ver($id){
-
 		
 		$dados = [
 
@@ -330,11 +268,6 @@ class Veiculos extends Controller {
 		$this->view('Veiculos/servico',$dados);
 
 	}
-
-
-
-
-
 
 }
 
