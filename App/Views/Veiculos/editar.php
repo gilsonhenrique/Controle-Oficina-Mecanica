@@ -96,8 +96,8 @@
 				<option value="Eduardo"<?php if($dados['mecrespd'] == 'EDUARDO'){ echo 'selected';}?>>Eduardo</option>
 				<option value="Robson"<?php if($dados['mecrespd'] == 'ROBSON'){ echo 'selected';}?>>Robson</option>
 				<option value="Jean"<?php if($dados['mecrespd'] == 'JEAN'){ echo 'selected';}?>>Jean</option>
-				<option value="Isaías Martins" <?php if($dados['mecresps'] == 'ISAÍAS MARTINS'){ echo 'selected';}?>>Isaías Martins</option>
-				<option value="Luiz Eduardo" <?php if($dados['mecresps'] == 'LUIZ EDUARDO'){ echo 'selected';}?>>Luiz Eduardo</option>
+				<option value="Isaías Martins" <?php if($dados['mecrespd'] == 'ISAÍAS MARTINS'){ echo 'selected';}?>>Isaías Martins</option>
+				<option value="Luiz Eduardo" <?php if($dados['mecrespd'] == 'LUIZ EDUARDO'){ echo 'selected';}?>>Luiz Eduardo</option>
 				<option value="Outro"<?php if($dados['mecrespd'] == 'OUTRO'){ echo 'selected';}?>>Outro (ver obs.)</option>
 				</select>
 			</div>
