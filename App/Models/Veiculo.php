@@ -98,10 +98,17 @@ class Veiculo {
 
 // Função listar itens no BD
 
-	public function verVeiculos(){
+	public function verVeiculos($consulta){
+
+		if($consulta == 'TODOS'):
 		$this->db->query("SELECT * FROM veiculos ORDER BY id DESC");
+		return $this->db->resultados();		
+		else:
+		$this->db->query("SELECT * FROM veiculos WHERE status = '$consulta' ORDER BY id DESC");
 
 		return $this->db->resultados();
+
+		endif;
 
 	}
 

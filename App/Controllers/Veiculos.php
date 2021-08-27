@@ -190,7 +190,9 @@ class Veiculos extends Controller {
 //	$dados = ['id'=> $id];
 		
 	if($this->usuarioModel->destruir($id)):
-		$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Ítem excluido com sucesso!</div></div>';
+		$viewCadastrar= URL.'/Veiculos/cadastrar';
+		header("refresh:5; url={$viewCadastrar}");
+		$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Ítem excluido com sucesso!<br>Aguarde, retornando à tela de cadastro...</div></div>';
 		echo $message; 
 
 		$dados = [
@@ -226,14 +228,14 @@ class Veiculos extends Controller {
 	}
 
 //  metodo 'listar".....................................................
-	public function listar(){
+	public function listar($consulta){
 
 		$dados = [
 
-			'veiculos' => $this->usuarioModel->verVeiculos()];
+			'veiculos' => $this->usuarioModel->verVeiculos(mb_strtoupper($consulta))];
 
 //var_dump($dados);/*   ### DEBUG   ###   */
-
+//var_dump($dados['veiculos']);
 			$this->view('Veiculos/listar', $dados);
 
 	}

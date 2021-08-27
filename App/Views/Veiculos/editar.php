@@ -145,9 +145,9 @@
 				</div>
 
 				<div>
-					<input type="radio" id="execucao" name="status" value="EXECUÇÃO"
-					<?php if($dados['status'] == 'EXECUÇÃO'){ echo 'checked';}?>>
-					<label for="execucao">Execução</label>
+					<input type="radio" id="executando" name="status" value="EXECUTANDO"
+					<?php if($dados['status'] == 'EXECUTANDO'){ echo 'checked';}?>>
+					<label for="executando">Executando</label>
 				</div>
 
 				<div>
@@ -164,8 +164,6 @@
 
 		</div>
 			
-			<?php if($dados['placa']):?>
-
 			<div class= "row">
 				<div class="btn-toolbar p-4">
 						<div class="col-md-2">
@@ -178,19 +176,6 @@
 						<a class="btn btn-danger btn-lg" href="<?= URL.'/Veiculos/deletar/'.$dados['id']?>" onclick="return confirm('Tem certeza que deseja excluir este ítem?')">Excluir</a>
 				</div>
 			</div>
-
-			<?php else:?>
-
-			<div class= "row">
-						<div class="col-md-2">
-						<a class="btn btn-primary btn-lg" href="<?=URL?>/Veiculos/cadastrar" role="button">Cadastrar</a>
-						</div>
-						<div class="col-md-2">
-						<a class="btn btn-secondary btn-lg" href="<?=URL?>/Veiculos/listar" role="button">Consultar</a>
-						</div>
-			</div>
-
-			<?php endif ?>
 
 		</div>
 

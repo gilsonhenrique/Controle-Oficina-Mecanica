@@ -10,12 +10,18 @@
           <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Menu veículos
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/cadastrar">Cadastrar Ítens</a></li>
-            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar">Listar Ítens</a></li>
-        </div>
-        
-        <a class="col btn btn-danger" href="<?=URL?>/Usuarios/sair">Sair</a>
+          <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/cadastrar">Cadastrar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Listar:</h6></li>
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar/todos">Todos</a></li>
+<!--            <li><a class="dropdown-item" href="">/Veiculos/listar">P/ Placa</a></li>-->
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar/aguardando">Aguardando</a></li>
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar/executando">Executando</a></li>
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar/liberado">Liberado</a></li>
+            <li><a class="dropdown-item" href="<?=URL?>/Veiculos/listar/pendente">Pendente</a></li>                        
+        </div>        
+<!--        <a class="col btn btn-danger" href="">Sair</a>-->
 
       </div>
 

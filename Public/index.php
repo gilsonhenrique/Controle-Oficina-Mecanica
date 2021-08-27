@@ -32,7 +32,6 @@ $db = new Db_Connect();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="<?=URL?>/Public/Js/jquery.funcoes.js"></script>
-        <script src="<?=URL?>/Public/Js/jquery.funcoes.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 

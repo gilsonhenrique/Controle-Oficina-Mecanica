@@ -146,8 +146,8 @@
 				</div>
 
 				<div>
-					<input type="radio" id="execucao" name="status" value="EXECUÇÃO">
-					<label for="execucao">Execução</label>
+					<input type="radio" id="executando" name="status" value="EXECUTANDO">
+					<label for="executando">Executando</label>
 				</div>
 
 				<div>
