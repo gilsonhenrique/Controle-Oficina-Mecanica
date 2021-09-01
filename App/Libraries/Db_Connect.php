@@ -12,6 +12,8 @@ class Db_Connect {
 		//informações para conexão BD
 		$dsn = 'mysql:host='. $this->host.';dbname='. $this->data;
 		$opcoes = [
+			//O comando SET NAMES 'UTF8' será rodado uma vez, sempre que essa uma nova conexão se iniciar.
+			PDO::MYSQL_ATTR_INIT_COMMAND =>  "SET NAMES 'UTF8'",
 			//Armazena em cache a conexão para se reutilizada, evita a sobrecarga de uma nova conexão, resultando em um aplicativo mais rápido.
 			PDO::ATTR_PERSISTENT => true,
 			//lança uma PDOException se ocorrer um erro
