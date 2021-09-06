@@ -1,10 +1,6 @@
 <!-- tamanho col.tela gde , tela média , centralizar, espaçãmento-->
 <div class="container p-2">
 
-		<div class="p-3 col-sm-8">
-		<h1 class="text-primary text-center">Relatório do Veículo</h1>
-		</div>
-
 		<div class= "row">
 
 			<div class="col-12 col-sm-12 p-3">
@@ -98,6 +94,21 @@
 			<div class="col-sm-4">
 				<label for="nome">Responsável: <sup class= "text-danger"></sup></label>
 				<p class="form-control is-valid"><?= $dados['veiculos']->mecresps?></p>
+			</div>
+
+		</div>
+
+		<div class= "row">
+
+			<div class="col-sm-12 p-3">
+				<h2>Controle de Status</h2>
+			</div>
+
+			<div class="bg text-dark col-12 col-sm-12">
+			<p><b>Entrada:  </b><?= $dados['veiculos']->aguardando_dt;?></p>
+			<p><b>Execução:  </b><?=$dados['veiculos']->executando_dt;?></p>
+			<p><b>Saída:  </b><?=$dados['veiculos']->liberado_dt;?></p>
+			<p><b>Pendente:  </b><?=$dados['veiculos']->pendente_dt;?></p>			
 			</div>
 
 		</div>

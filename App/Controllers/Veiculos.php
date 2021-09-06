@@ -33,8 +33,38 @@ class Veiculos extends Controller {
 				'mecrespd' => mb_strtoupper(trim($formulario['mecrespd'])),
 				'obs' => mb_strtoupper(trim($formulario['obs'])),
 				'mecresps' => mb_strtoupper(trim($formulario['mecresps'])),
-				'status' => mb_strtoupper(trim($formulario['status'])),			
+				'status' => mb_strtoupper(trim($formulario['status'])),	
+				'aguardando_dt' => '',
+				'executando_dt' => '',
+				'liberado_dt' => '',
+				'pendente_dt' => '',
 				];
+
+				//......Inserir data para o status corresponte.......
+				date_default_timezone_set('America/Sao_Paulo');
+
+				switch ($formulario['status']):
+				case 'AGUARDANDO':
+				//saída ex: 20/03/19 16:58
+				$dados['aguardando_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'EXECUTANDO':
+				$dados['executando_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'LIBERADO':
+				$dados['liberado_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'PENDENTE':
+				$dados['pendente_dt'] = date('d/m/Y H:i');
+				break;
+
+				endswitch;
+
+//////////////////////////////////////////////////////////////////////
+
 
 				if(in_array('', $formulario)):
 
@@ -57,7 +87,8 @@ class Veiculos extends Controller {
 
 				endif;
 
-				// 	
+
+	
 		else:
 				
 // ............P/ carregar a view cadastrar inicial............ 
@@ -79,7 +110,7 @@ class Veiculos extends Controller {
 					'mecrespd' => '',
 					'obs' => '',								
 					'mecresps' => '',
-					'status' => '',								
+					'status' => '',							
 					];
 
 		endif;
@@ -121,7 +152,33 @@ class Veiculos extends Controller {
 				'obs' => mb_strtoupper(trim($formulario['obs'])),
 				'mecresps' => mb_strtoupper(trim($formulario['mecresps'])),
 				'status' => mb_strtoupper(trim($formulario['status'])),
+				'aguardando_dt' => $formulario['aguardando_dt'],
+				'executando_dt' => $formulario['executando_dt'],
+				'liberado_dt' => $formulario['liberado_dt'],
+				'pendente_dt' => $formulario['pendente_dt'],	
 				];
+
+				//......Inserir data para o status corresponte.......
+				date_default_timezone_set('America/Sao_Paulo');
+				switch ($formulario['status']):
+				case 'AGUARDANDO':
+				//saída ex: 20/03/19 16:58
+				$dados['aguardando_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'EXECUTANDO':
+				$dados['executando_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'LIBERADO':
+				$dados['liberado_dt'] = date('d/m/Y H:i');
+				break;
+
+				case 'PENDENTE':
+				$dados['pendente_dt'] = date('d/m/Y H:i');
+				break;
+
+				endswitch;
 
 
 				if(in_array('', $formulario)):
@@ -170,12 +227,16 @@ class Veiculos extends Controller {
 				'mecrespd' => $veiculo->mecrespd,
 				'obs' => $veiculo->obs,								
 				'mecresps' => $veiculo->mecresps,
-				'status' => $veiculo->status,							
+				'status' => $veiculo->status,
+				'aguardando_dt' => $veiculo->aguardando_dt,
+				'executando_dt' => $veiculo->executando_dt,
+				'liberado_dt' => $veiculo->liberado_dt,
+				'pendente_dt' => $veiculo->pendente_dt,								
 			];
 
 		endif;
 
-//var_dump($relatorio);/*   ### DEBUG   ###   */
+//var_dump($formulario);/*   ### DEBUG   ###   */
 //var_dump($dados);/*   ### DEBUG   ###   */
 
 // a view recebe $dados para exebição na tela
@@ -215,6 +276,10 @@ class Veiculos extends Controller {
 			'obs' => '',								
 			'mecresps' => '',
 			'status' => '',					
+			'aguardando_dt' => '',
+			'executando_dt' => '',
+			'liberado_dt' => '',
+			'pendente_dt' => '',		
 		];
 
 

@@ -9,7 +9,8 @@
       <th>Nome</th>
       <th>Celular</th>      
       <th style="min-width:400px">Irregularidade</th>
-      <th>status</th>      
+      <th>Status</th>
+      <th style="min-width:150px">Data/Hora</th>      
       <th>Selecione</th>     
     </tr>
   </thead>
@@ -23,7 +24,29 @@
       <td><?= $relatorio->nome?></td>
       <td><?= $relatorio->celular?></td>     
       <td><?= $relatorio->irregularidade?></td>
-      <td><?= $relatorio->status?></td>      
+      <td><?= $relatorio->status?></td>
+      <td>
+        <?php
+        switch ($relatorio->status):
+        case 'AGUARDANDO':
+        echo $relatorio->aguardando_dt;
+        break;
+
+        case 'EXECUTANDO':
+        echo $relatorio->executando_dt;
+        break;
+
+        case 'LIBERADO':
+        echo $relatorio->liberado_dt; 
+        break;
+
+        case 'PENDENTE':
+        echo $relatorio->pendente_dt;    
+        break;
+
+        endswitch;
+        ?>
+      </td>            
       <td><div style="min-width:150px">
             <a href="<?= URL.'/veiculos/ver/'.$relatorio->id?>" class="btn btn-primary">Exibir</a>
             <a href="<?= URL.'/veiculos/editar/'.$relatorio->id?>" class="btn btn btn-warning">Editar</a>

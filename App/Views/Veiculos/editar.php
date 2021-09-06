@@ -141,25 +141,29 @@
 				<div>
 					<input type="radio" id="aguardando" name="status" value="AGUARDANDO"
 					<?php if($dados['status'] == 'AGUARDANDO'){ echo 'checked';}?>>
-					<label for="aguardando">Aguardando</label>
+					<label for="aguardando">Aguardando<?php if($dados['status'] == 'AGUARDANDO'){echo ': '.$dados['aguardando_dt'];}?></label>
+					<input type="hidden" id="aguardando_dt" name="aguardando_dt" value= "<?php if(isset($dados['aguardando_dt'])){echo $dados['aguardando_dt'];}?>">
 				</div>
 
 				<div>
 					<input type="radio" id="executando" name="status" value="EXECUTANDO"
 					<?php if($dados['status'] == 'EXECUTANDO'){ echo 'checked';}?>>
-					<label for="executando">Executando</label>
+					<label for="executando">Executando<?php if($dados['status'] == 'EXECUTANDO'){echo ': '.$dados['executando_dt'];}?></label>
+					<input type="hidden" id="executando_dt" name="executando_dt" value= "<?php if(isset($dados['executando_dt'])){echo $dados['executando_dt'];}?>">
 				</div>
 
 				<div>
 					<input type="radio" id="liberado" name="status" value="LIBERADO"
 					<?php if($dados['status'] == 'LIBERADO'){ echo 'checked';}?>>
-					<label for="liberado">Liberado</label>
+					<label for="liberado">Liberado<?php if($dados['status'] == 'LIBERADO'){echo ': '.$dados['liberado_dt'];}?></label>
+					<input type="hidden" id="liberado_dt" name="liberado_dt" value= "<?php if(isset($dados['liberado_dt'])){echo $dados['liberado_dt'];}?>">
 				</div>
 
 				<div>
-					<input type="radio" id="Pendente" name="status" value="PENDENTE"
+					<input type="radio" id="pendente" name="status" value="PENDENTE"
 					<?php if($dados['status'] == 'PENDENTE'){ echo 'checked';}?>>
-					<label for="Pendente">Pendente</label>
+					<label for="pendente">Pendente<?php if($dados['status'] == 'PENDENTE'){echo ': '.$dados['pendente_dt'];}?></label>
+					<input type="hidden" id="pendente_dt" name="pendente_dt" value= "<?php if(isset($dados['pendente_dt'])){echo $dados['pendente_dt'];}?>">
 				</div>
 
 		</div>
