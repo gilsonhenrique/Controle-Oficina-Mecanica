@@ -45,11 +45,12 @@
 				<option value="">--Selecione o combustível--</option>
 				<option value="Álcool" <?php if($dados['combustivel'] == 'ÁLCOOL'){ echo 'selected';}?>>Álcool</option>
 				<option value="Gasolina"<?php if($dados['combustivel'] == 'GASOLINA'){ echo 'selected';}?>>Gasolina</option>
-				<option value="Diesel"<?php if($dados['combustivel'] == 'DIESEL'){ echo 'selected';}?>>Diesel</option>
-				<option value="Elétrico"<?php if($dados['combustivel'] == 'ELÉTRICO'){ echo 'selected';}?>>Elétrico</option>				
 				<option value="Flex"<?php if($dados['combustivel'] == 'FLEX'){ echo 'selected';}?>>Flex</option>
 				<option value="GNV-Álcool"<?php if($dados['combustivel'] == 'GNV-ÁLCOOL'){ echo 'selected';}?>>GNV-Álcool</option>
 				<option value="GNV-Gasolina"<?php if($dados['combustivel'] == 'GNV-GASOLINA'){ echo 'selected';}?>>GNV-Gasolina</option>
+				<option value="Tetrafuel"<?php if($dados['combustivel'] == 'TETRAFUEL'){ echo 'selected';}?>>Tetrafuel</option>
+				<option value="Diesel"<?php if($dados['combustivel'] == 'DIESEL'){ echo 'selected';}?>>Diesel</option>
+				<option value="Elétrico"<?php if($dados['combustivel'] == 'ELÉTRICO'){ echo 'selected';}?>>Elétrico</option>				
 				</select>
 			</div>
 			<div class="col-4 col-sm-2">
@@ -96,6 +97,7 @@
 				<option value="Eduardo"<?php if($dados['mecrespd'] == 'EDUARDO'){ echo 'selected';}?>>Eduardo</option>
 				<option value="Robson"<?php if($dados['mecrespd'] == 'ROBSON'){ echo 'selected';}?>>Robson</option>
 				<option value="Jean"<?php if($dados['mecrespd'] == 'JEAN'){ echo 'selected';}?>>Jean</option>
+				<option value="Rodrigo"<?php if($dados['mecrespd'] == 'RODRIGO'){ echo 'selected';}?>>Rodrigo</option>
 				<option value="Isaías Martins" <?php if($dados['mecrespd'] == 'ISAÍAS MARTINS'){ echo 'selected';}?>>Isaías Martins</option>
 				<option value="Luiz Eduardo" <?php if($dados['mecrespd'] == 'LUIZ EDUARDO'){ echo 'selected';}?>>Luiz Eduardo</option>
 				<option value="Outro"<?php if($dados['mecrespd'] == 'OUTRO'){ echo 'selected';}?>>Outro (ver obs.)</option>
@@ -125,6 +127,7 @@
 				<option value="Eduardo"<?php if($dados['mecresps'] == 'EDUARDO'){ echo 'selected';}?>>Eduardo</option>
 				<option value="Robson"<?php if($dados['mecresps'] == 'ROBSON'){ echo 'selected';}?>>Robson</option>
 				<option value="Jean"<?php if($dados['mecresps'] == 'JEAN'){ echo 'selected';}?>>Jean</option>
+				<option value="Rodrigo"<?php if($dados['mecrespd'] == 'RODRIGO'){ echo 'selected';}?>>Rodrigo</option>
 				<option value="Isaías Martins" <?php if($dados['mecresps'] == 'ISAÍAS MARTINS'){ echo 'selected';}?>>Isaías Martins</option>
 				<option value="Luiz Eduardo" <?php if($dados['mecresps'] == 'LUIZ EDUARDO'){ echo 'selected';}?>>Luiz Eduardo</option>
 				<option value="Outro"<?php if($dados['mecresps'] == 'OUTRO'){ echo 'selected';}?>>Outro (ver obs.)</option>

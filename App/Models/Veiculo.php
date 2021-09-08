@@ -11,7 +11,8 @@ class Veiculo {
 
 /////////////////////////////////////////////////////////////////////////
 
-// Função cadastrar no BD
+// Cadastrar veículo no BD
+
 	public function cadastrar($dados){
 
 		$this->db->query("INSERT INTO veiculos(prisma, nome, celular, placa, fabricacao, modelo, cilindrada, km, combustivel, veiculo, cor, irregularidade, diagnostico, pecnec, mecrespd, obs, mecresps, status, aguardando_dt, executando_dt, liberado_dt, pendente_dt) VALUES (:prisma, :nome, :celular, :placa, :fabricacao, :modelo, :cilindrada, :km, :combustivel, :veiculo, :cor, :irregularidade, :diagnostico, :pecnec, :mecrespd, :obs, :mecresps, :status, :aguardando_dt, :executando_dt, :liberado_dt, :pendente_dt)");
@@ -21,7 +22,7 @@ class Veiculo {
 		$this->db->bind("placa", $dados['placa']);
 		$this->db->bind("fabricacao", $dados['fabricacao']);
 		$this->db->bind("modelo", $dados['modelo']);
-		$this->db->bind("cilindrada", $dados['cilindrada']);			
+		$this->db->bind("cilindrada", $dados['cilindrada']);		
 		$this->db->bind("km", $dados['km']);
 		$this->db->bind("combustivel", $dados['combustivel']);
 		$this->db->bind("veiculo", $dados['veiculo']);
@@ -44,11 +45,10 @@ class Veiculo {
 			return false;
 		endif;
 	}
-
 /////////////////////////////////////////////////////////////////////////
 
+// Atualizar Veiculo no BD
 
-// Função para atualizar o Veiculo no BD
 	public function atualizar($dados){
 
 		$this->db->query("UPDATE veiculos SET prisma = :prisma, nome= :nome, celular = :celular, placa = :placa, fabricacao = :fabricacao, modelo = :modelo, cilindrada = :cilindrada, km = :km, combustivel = :combustivel, veiculo = :veiculo, cor = :cor, irregularidade = :irregularidade, diagnostico = :diagnostico, pecnec = :pecnec, mecrespd = :mecrespd, obs = :obs, mecresps = :mecresps, status = :status, aguardando_dt = :aguardando_dt, executando_dt = :executando_dt, liberado_dt = :liberado_dt, pendente_dt = :pendente_dt  WHERE id = :id");
@@ -82,9 +82,10 @@ class Veiculo {
 			return false;
 		endif;
 	}
+/////////////////////////////////////////////////////////////////////////
 
+// Excluir veículo no BD
 
-// Função para deletar Veiculo no BD
 	public function destruir($id){
 
 		$this->db->query("DELETE FROM veiculos WHERE id = :id");
@@ -97,11 +98,9 @@ class Veiculo {
 			return false;
 		endif;
 	}
-
-
 /////////////////////////////////////////////////////////////////////////
 
-// Função listar itens no BD
+// Consultar "Todos" os veículos ou por "Status"
 
 	public function verVeiculos($consulta){
 
@@ -116,8 +115,6 @@ class Veiculo {
 		endif;
 
 	}
-
-
 /////////////////////////////////////////////////////////////////////////
 
 // Função para ver por id
@@ -127,7 +124,19 @@ class Veiculo {
 
 		return $this->db->resultado();
 	}
+/////////////////////////////////////////////////////////////////////////
+
+// Consultar por placa
+
+	public function verPorPlaca($placa){
+		$this->db->query("SELECT * FROM veiculos WHERE placa = :placa");
+		$this->db->bind('placa', $placa);
+
+		return $this->db->resultados();
+	}
 
 }
+/////////////////////////////////////////////////////////////////////////
+
 
 ?>

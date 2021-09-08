@@ -46,11 +46,12 @@
 				<option value="">--Selecione--</option>
 				<option value="Álcool">Álcool</option>
 				<option value="Gasolina">Gasolina</option>
-				<option value="Diesel">Diesel</option>
-				<option value="Elétrico">Elétrico</option>				
 				<option value="Flex">Flex</option>
 				<option value="GNV-Álcool">GNV-Álcool</option>
 				<option value="GNV-Gasolina">GNV-Gasolina</option>
+				<option value="Tetrafuel">Tetrafuel</option>		
+				<option value="Diesel">Diesel</option>
+				<option value="Elétrico">Elétrico</option>	
 				</select>
 			</div>
 			<div class="col-4 col-sm-2">
@@ -98,6 +99,7 @@
 				<option value="Eduardo">Eduardo</option>
 				<option value="Robson">Robson</option>
 				<option value="Jean">Jean</option>
+				<option value="Rodrigo">Rodrigo</option>
 				<option value="Isaías Martins">Isaías Martins</option>
 				<option value="Luiz Eduardo">Luiz Eduardo</option>
 				<option value="Outro">Outro (ver obs.)</option>
@@ -126,6 +128,7 @@
 				<option value="Eduardo">Eduardo</option>
 				<option value="Robson">Robson</option>
 				<option value="Jean">Jean</option>
+				<option value="Rodrigo">Rodrigo</option>
 				<option value="Isaías Martins">Isaías Martins</option>
 				<option value="Luiz Eduardo">Luiz Eduardo</option>
 				<option value="Outro">Outro (ver obs.)</option>

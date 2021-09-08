@@ -8,7 +8,7 @@ class Veiculos extends Controller {
 		$this->usuarioModel = $this->model('Veiculo');
 
 	}
-
+//  metodo "cadastrar"....................................................
 	public function cadastrar(){
 
 		$formulario = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -63,7 +63,6 @@ class Veiculos extends Controller {
 
 				endswitch;
 
-//////////////////////////////////////////////////////////////////////
 
 
 				if(in_array('', $formulario)):
@@ -91,7 +90,7 @@ class Veiculos extends Controller {
 	
 		else:
 				
-// ............P/ carregar a view cadastrar inicial............ 
+			// ........P/ carregar a view cadastrar inicial........ 
 			$dados = [
 					'prisma' => '',
 					'nome' => '',
@@ -121,8 +120,6 @@ class Veiculos extends Controller {
 // a view recebe $dados para exebição na tela
 		$this->view('Veiculos/cadastrar', $dados);
 	}
-
-
 ///////////////////////////////////////////////////////////////////
 
 //  metodo "editar"....................................................
@@ -242,8 +239,7 @@ class Veiculos extends Controller {
 // a view recebe $dados para exebição na tela
 		$this->view('Veiculos/editar', $dados);
 	}
-
-
+///////////////////////////////////////////////////////////////////
 
 //  metodo 'deletar".....................................................
 	public function deletar($id){
@@ -291,6 +287,7 @@ class Veiculos extends Controller {
 		$this->view('Veiculos/editar', $dados);
 
 	}
+///////////////////////////////////////////////////////////////////
 
 //  metodo 'listar".....................................................
 	public function listar($consulta){
@@ -299,12 +296,13 @@ class Veiculos extends Controller {
 
 			'veiculos' => $this->usuarioModel->verVeiculos(mb_strtoupper($consulta))];
 
+//var_dump($consulta);
 //var_dump($dados);/*   ### DEBUG   ###   */
 //var_dump($dados['veiculos']);
 			$this->view('Veiculos/listar', $dados);
 
 	}
-
+///////////////////////////////////////////////////////////////////
 
 //  metodo "ver".........................................................
 	public function ver($id){
@@ -319,20 +317,21 @@ class Veiculos extends Controller {
 		$this->view('Veiculos/ver',$dados);
 
 	}
-	
+///////////////////////////////////////////////////////////////////
 
+//  metodo "ver por Placa"...............................................
+	public function verPorPlaca(){
 
-	public function servico($id){
+		$placa = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-		
+		$placa = mb_strtoupper(trim($placa['search']));
+
 		$dados = [
 
-			'veiculos' => $this->usuarioModel->verPorId($id)];
+			'veiculos' => $this->usuarioModel->verPorPlaca($placa)];
 
-	// a view (\PHP7eMVC\App\Views\Posts\ver.php) recebe $dados para exebição na tela
-//var_dump($id);
-//var_dump($dados);
-		$this->view('Veiculos/servico',$dados);
+
+		$this->view('Veiculos/verPorPlaca',$dados);
 
 	}
 
