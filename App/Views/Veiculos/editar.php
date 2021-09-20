@@ -21,11 +21,11 @@
 			</div>	
 			<div class="col-6 col-sm-3">
 				<label for="nome">Celular: <sup class= "text-danger"></sup></label>
-				<input type="tel" maxlength= "11" name="celular" placeholder="21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
+				<input type="tel" maxlength= "11" name="celular" placeholder="Ex.: 21912341234" id="celular" value="<?=$dados['celular']?>" class="form-control is-valid">
 			</div>
 			<div class="col-6 col-sm-3">
 				<label for="nome">Placa: <sup class= "text-danger"></sup></label>
-				<input type="text" maxlength= "7" name="placa" placeholder="AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
+				<input type="text" maxlength= "7" name="placa" placeholder="Ex.: AAA9B99" id="placa" value="<?=$dados['placa']?>" class="form-control is-valid">
 			</div>
 			<div class="col-6 col-sm-3">
 				<label for="nome">Veículo <sup class= "text-danger"></sup></label>

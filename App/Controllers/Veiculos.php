@@ -67,27 +67,36 @@ class Veiculos extends Controller {
 
 				if(in_array('', $formulario)):
 
-				// ......Validações de Campos Vazios....................
+//  Validações dos Campos Obrigatórios
 					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular'])):
 						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div></div>';
 						echo $message;
 					
-					elseif($this->usuarioModel->cadastrar($dados)):
-						$viewCadastrar= URL.'/Veiculos/cadastrar';
-						header("refresh:5; url={$viewCadastrar}");
-						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro realizado com sucesso!<br>Aguarde, carregando a tela de cadastro...</div></div>';
-						echo $message;
-
 					else:
-						die("Erro no armazenar usuário no banco de dados");
-					
-					endif;	
+					$message = '';	
+				
+					endif;
 
-
+			
 				endif;
 
+//  Executa o cadastro 
+				if(!in_array('', $formulario) or $message == ''):
 
-	
+						if($this->usuarioModel->cadastrar($dados)):
+							$viewCadastrar= URL.'/Veiculos/cadastrar';
+							header("refresh:5; url={$viewCadastrar}");
+							$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro realizado com sucesso!<br>Aguarde, carregando a tela de cadastro...</div></div>';
+							echo $message;
+
+						else:
+					
+						die("Erro no armazenar usuário no banco de dados");
+					
+						endif;
+
+				endif;	
+//  Carrega a view cadastrar inicial campos vazios 	
 		else:
 				
 			// ........P/ carregar a view cadastrar inicial........ 
@@ -181,7 +190,7 @@ class Veiculos extends Controller {
 				if(in_array('', $formulario)):
 
 				// ......Validações de Campos Vazios....................
-					if(empty($formulario['nome']) or empty($formulario['placa'])):
+					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular'])):
 						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div></div>';
 						echo $message;
 //					                             metodo
