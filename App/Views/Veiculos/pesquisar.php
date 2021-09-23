@@ -1,4 +1,12 @@
+<!--  TAbela  -->
 <div class="table-responsive p-4">
+
+<?php if(isset($_POST['nome'])):?>
+<p>Resultado da consulta por nome:</p>
+<?php elseif(isset($_POST['placa'])):?>
+<p>Resultado da consulta por placa:</p>
+<?php endif;?>
+
 <table class="table table-striped">
   <thead class="table-active">
     <tr style="text-align: center">
@@ -20,9 +28,10 @@
       <td><?= $relatorio->nome?></td>
       <td><?= $relatorio->celular?></td>     
       <td><?= $relatorio->irregularidade?></td>
-      <td><div style="min-width:150px">
-        <a href="<?= URL.'/veiculos/ver/'.$relatorio->id?>" class="btn btn-primary">Exibir</a>
-        <a href="<?= URL.'/veiculos/editar/'.$relatorio->id?>" class="btn btn btn-warning">Editar</a>
+      <td><div style="min-width:250px">
+        <a href="<?= URL.'/veiculos/ver/'.$relatorio->id?>" class="btn btn-primary btn-sm">Exibir</a>
+        <a href="<?= URL.'/veiculos/editar/'.$relatorio->id?>" class="btn btn-warning btn-sm">Editar</a>
+        <a href="<?= URL.'/veiculos/Recadastrar/'.$relatorio->id?>" class="btn btn-info btn-sm">Recadastrar</a>        
      </div></td>
     </tr>
     <?php endforeach ?>

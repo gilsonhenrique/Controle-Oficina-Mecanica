@@ -1,10 +1,9 @@
 <?php
 
 class Veiculos extends Controller {
-
+//construct disponibiliza a model para uso.
 	public function __construct(){
-// Variavel usuarioModel chama function model (Libraries/Controller)
-// La embaixo, chama função cadastrar
+
 		$this->usuarioModel = $this->model('Veiculo');
 
 	}
@@ -82,8 +81,9 @@ class Veiculos extends Controller {
 
 //  Executa o cadastro 
 				if(!in_array('', $formulario) or $message == ''):
-
+						//persistência utilizando o método
 						if($this->usuarioModel->cadastrar($dados)):
+						//......Mensagem sucesso, redirecionando view cadastrar depois 5seg. ..........
 							$viewCadastrar= URL.'/Veiculos/cadastrar';
 							header("refresh:5; url={$viewCadastrar}");
 							$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro realizado com sucesso!<br>Aguarde, carregando a tela de cadastro...</div></div>';
@@ -193,13 +193,13 @@ class Veiculos extends Controller {
 					if(empty($formulario['nome']) or empty($formulario['placa']) or empty($formulario['celular'])):
 						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Preencha os campos obrigatórios</div></div>';
 						echo $message;
-//					                             metodo
+					//persistência utilizando o método
 					elseif($this->usuarioModel->atualizar($dados)):
-				//......Mensagem sucesso, redirecionando view cadastrar depois 5seg. ..........
-					$viewCadastrar= URL.'/Veiculos/cadastrar';
-					header("refresh:5; url={$viewCadastrar}");
-					$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro atualizado com sucesso!<br>Aguarde, retornando à tela de cadastro...</div></div>';
-					echo $message;
+						//......Mensagem sucesso, redirecionando view cadastrar depois 5seg. ..........
+						$viewCadastrar= URL.'/Veiculos/cadastrar';
+						header("refresh:5; url={$viewCadastrar}");
+						$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-success" role="alert">Cadastro atualizado com sucesso!<br>Aguarde, retornando à tela de cadastro...</div></div>';
+						echo $message;
 
 					else:
 						die("Erro ao atualizar o cadastro no banco de dados");
@@ -211,9 +211,10 @@ class Veiculos extends Controller {
 
 				// 	
 		else:
-	
+
+			//persistência utilizando o método
 			$veiculo = $this->usuarioModel->verPorId($id);
-		// dados em branco para o formulario aparecer "limpo"
+
 			$dados = [
 				'id'=> $id,	
 				'prisma' => $veiculo->prisma,
@@ -329,21 +330,64 @@ class Veiculos extends Controller {
 ///////////////////////////////////////////////////////////////////
 
 //  metodo "ver por Placa"...............................................
-	public function verPorPlaca(){
+	public function pesquisar(){
 
-		$placa = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+		$pesquisar = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-		$placa = mb_strtoupper(trim($placa['search']));
+		$pesquisar = mb_strtoupper(trim($pesquisar['search']));
 
 		$dados = [
 
-			'veiculos' => $this->usuarioModel->verPorPlaca($placa)];
+			'veiculos' => $this->usuarioModel->pesquisar($pesquisar)];
 
-
-		$this->view('Veiculos/verPorPlaca',$dados);
-
+	if (!empty($dados['veiculos'])):		
+		$this->view('Veiculos/pesquisar',$dados);
+	
+	else:
+		$viewInicial= URL;
+		header("refresh:3; url={$viewInicial}");
+		$message = '<div class="container p-3" style= "text-align:center"><div class="alert alert-danger" role="alert">Nenhum registro encontrado com: '.$pesquisar.' , Retornando...</div></div>';
+		echo $message;
+	endif;
+	
 	}
 
+
+	public function recadastrar($id){
+
+		$dados = $this->usuarioModel->verPorId($id);
+
+			$_POST = [
+				'id'=> '',	
+				'prisma' => '',
+				'nome' => $dados->nome,
+				'celular' => $dados->celular,
+				'placa' => $dados->placa,
+				'fabricacao' => $dados->fabricacao,
+				'modelo' => $dados->modelo,
+				'cilindrada' => $dados->cilindrada,
+				'km' => '',
+				'combustivel' => $dados->combustivel,
+				'veiculo' => $dados->veiculo,
+				'cor' => $dados->cor,
+				'irregularidade' => '',
+				'diagnostico' => '',
+				'pecnec' => '',
+				'mecrespd' => '',
+				'obs' => '',								
+				'mecresps' => '',
+				'status' => '',
+				'aguardando_dt' => '',
+				'executando_dt' => '',
+				'liberado_dt' => '',
+				'pendente_dt' => '',								
+			];
+
+//var_dump($dados);
+
+		$this->view('Veiculos/cadastrar', $_POST);		
+
+	}
 }
 
 ?>

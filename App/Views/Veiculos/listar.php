@@ -48,8 +48,8 @@
         ?>
       </td>            
       <td><div style="min-width:150px">
-            <a href="<?= URL.'/veiculos/ver/'.$relatorio->id?>" class="btn btn-primary">Exibir</a>
-            <a href="<?= URL.'/veiculos/editar/'.$relatorio->id?>" class="btn btn btn-warning">Editar</a>
+            <a href="<?= URL.'/veiculos/ver/'.$relatorio->id?>" class="btn btn-primary btn-sm">Exibir</a>
+            <a href="<?= URL.'/veiculos/editar/'.$relatorio->id?>" class="btn btn btn-warning btn-sm">Editar</a>
             </div></td>
     </tr>
     <?php endforeach ?>

@@ -128,15 +128,21 @@ class Veiculo {
 
 // Consultar por placa
 
-	public function verPorPlaca($placa){
-		$this->db->query("SELECT * FROM veiculos WHERE placa = :placa");
-		$this->db->bind('placa', $placa);
+	public function pesquisar($busca){
 
+		if(isset($_POST['placa'])):
+		$this->db->query("SELECT * FROM veiculos WHERE placa = :placa");
+		$this->db->bind('placa', $busca);
 		return $this->db->resultados();
+		endif;
+
+		if(isset($_POST['nome'])):
+		$this->db->query("SELECT * FROM veiculos WHERE nome LIKE '%$busca%' ");
+		return $this->db->resultados();
+		endif;
 	}
 
-}
-/////////////////////////////////////////////////////////////////////////
 
+}
 
 ?>

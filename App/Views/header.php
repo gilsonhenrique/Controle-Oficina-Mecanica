@@ -28,9 +28,10 @@
           </ul>
         </li>
       </ul>
-      <form method="post" class="d-flex" action="<?=URL?>/Veiculos/verPorPlaca">
-        <input class="form-control me-2" type="text" name="search" placeholder="Placa" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" name="submit">Buscar</button>
+      <form method="post" class="d-flex" action="<?=URL?>/Veiculos/pesquisar">
+        <input class="form-control me-2" type="text" name="search" placeholder="Placa ou Nome" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" value="placa" name="placa">Placa</button>
+        <button class="btn btn-outline-primary" type="submit" value="nome" name="nome">Nome</button>        
       </form>
     </div>
   </div>
