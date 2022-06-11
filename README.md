@@ -1,6 +1,10 @@
-Ajustar o App/config.example.php renomeando para config.php:
-____________________________________________________________
+# Oficina-perfeita-Combustão
+Aplicação desenvolvida para agilizar o operacional e controle de uma oficina mecânica, que anteriormente utilizava controle em papel.
+Foi desenvolvida utilizando um microfremwork de php e bootstrap.
 
+## Configurações necessárias
+Ajustar o App/config.example.php renomeando para config.php:
+```php
 // 1)- Conexão
 define('DB',[
 	'HOST' => 'meu_host',
@@ -11,11 +15,10 @@ define('DB',[
 
 // 3) Url do Projeto
 define('URL','http://meu_host/minha_pasta/minha_subpasta');
-
+```
 
 Ajustar o path do .htaccess na pasta Public:
-____________________________________________
-
+```php
 <ifModule mod_rewrite.c>
 Options -Multiviews
 RewriteEngine On
@@ -24,3 +27,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 </ifModule>
+```
+
+## CREDITOS
+Micro framework - Ronaldo Aires
+
+https://youtube.com/playlist?list=PL0N5TAOhX5E-NZ0RRHa2tet6NCf9-7B5G
+>
