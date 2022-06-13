@@ -1,6 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="<?=URL?>">BMI-Automec</a>
+    <div class ="col text-center">
+      <span class="navbar-text">
+        <a class="navbar-brand text-white"><?="Olá,  ".$_SESSION['usuario_nome']?></a>
+        <a class="btn btn-danger" href="<?=URL?>/usuarios/sair" data-tooltip="tooltip" title="">Sair</a>
+      </span>
+    </div>   
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
