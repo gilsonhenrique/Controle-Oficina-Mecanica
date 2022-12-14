@@ -9,19 +9,23 @@ php e bootstrap.
 Ajustar o App/config.example.php renomeando para config.php:
 
 ```php
-// 1)- Conexão
+// Conexão
 define('DB',[
 	'HOST' => 'meu_host',
 	'USUARIO' => 'meu_user',
-	'SENHA' => '12345678',
+	'SENHA' => 'minha_senha',
 	'BANCO' => 'meu_banco'
 	]);
 
-// 3) Url do Projeto
+// Url do Projeto
 define('URL','http://meu_host/minha_pasta/minha_subpasta');
 ```
 
-Ajustar o path do .htaccess na pasta Public:
+Crie um Banco de dados , e importe o arquivo veiculos.sql
+> Obs: Este arquivo contém a estrutura da tabela usada no Banco de dados
+
+
+Crie um .htaccess dentro pasta Public, com o path da aplicação:
 
 ```php
 <ifModule mod_rewrite.c>
@@ -34,7 +38,7 @@ RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 </ifModule>
 ```
 
-> Note: Login: **oficina** / Senha: **003-9** definidos em:\App\Models\Usuario.php    
+> Nota: Login: **oficina** / Senha: **003-9** definidos em:\App\Models\Usuario.php    
 
 ## Melhorias a serem implementadas
 

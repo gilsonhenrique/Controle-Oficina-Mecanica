@@ -1,27 +1,27 @@
 <?php
 // Configurações do APP
 
-// 1)- Conexão
+// Conexão
 define('DB',[
 	'HOST' => 'meu_host',
 	'USUARIO' => 'meu_user',
-	'SENHA' => '12345678',
+	'SENHA' => 'minha_senha',
 	'BANCO' => 'meu_banco'
 	]);
 
-// 2) Direciona a Raiz do APP
+// Direciona a Raiz do APP
 define ('APP', dirname(__FILE__));
 
-// 3) Url do Projeto
+// Url do Projeto
 define('URL','http://meu_host/minha_pasta/minha_subpasta');
 
-// 4) Nome do APP
+// Nome do APP
 define('APP_NOME','nome do App');
 
-// 5) Versão do APP
+// Versão do APP
 define('APP_VERSAO','xxxxxx';
 
-// 6) Informações do cliente
+// Informações do cliente
 
 define('CLIENTE_NOME','Oficina perfeita Combustão');
 define('CLIENTE_APELIDO','Perfeita Combustão S.A.');
